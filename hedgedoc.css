@@ -7,7 +7,7 @@ h2.part,
 
 h2.part:before,
 #doc>h2:before {
-    content: counter(h2Counter) !important;
+    content: counter(h2Counter, upper-alpha) !important;
     visibility: visible !important;
     height: 100% !important;
     display: inline-block !important;
@@ -27,7 +27,7 @@ h3.part,
 
 h3.part:before,
 #doc>h3:before {
-    content: counter(h2Counter) '.' counter(h3Counter) !important;
+    content: counter(h2Counter, upper-alpha) '.' counter(h3Counter) !important;
     visibility: visible !important;
     height: 100% !important;
     display: inline-block !important;
@@ -44,7 +44,7 @@ h4.part,
 
 h4.part:before,
 #doc>h4:before {
-    content: counter(h2Counter) '.' counter(h3Counter) '.' counter(h4Counter) !important;
+    content: counter(h2Counter, upper-alpha) '.' counter(h3Counter) '.' counter(h4Counter) !important;
     visibility: visible !important;
     height: 100% !important;
     display: inline-block !important;
@@ -61,7 +61,7 @@ h5.part,
 
 h5.part:before,
 #doc>h5:before {
-    content: counter(h2Counter) '.' counter(h3Counter) '.' counter(h4Counter) '.'
+    content: counter(h2Counter, upper-alpha) '.' counter(h3Counter) '.' counter(h4Counter) '.'
         counter(h5Counter) !important;
     visibility: visible !important;
     height: 100% !important;
@@ -78,7 +78,7 @@ h6.part,
 
 h6.part:before,
 #doc>h6:before {
-    content: counter(h2Counter) '.' counter(h3Counter) '.' counter(h4Counter) '.'
+    content: counter(h2Counter, upper-alpha) '.' counter(h3Counter) '.' counter(h4Counter) '.'
         counter(h5Counter) '.' counter(h6Counter) !important;
     visibility: visible !important;
     height: 100% !important;
@@ -96,7 +96,7 @@ div.toc>ul>li>ul>li,
 
 div.toc>ul>li>ul>li>a:before,
 #doc>p>span>ul>li>ul>li>a:before {
-    content: counter(l2Counter) ' ';
+    content: counter(l2Counter, upper-alpha) ' ';
     /* 以下為 H2 編號的樣式 */
 }
 
@@ -108,6 +108,6 @@ div.toc>ul>li>ul>li>ul>li,
 
 div.toc>ul>li>ul>li>ul>li>a:before,
 #doc>p>span>ul>li>ul>li>ul>li>a:before {
-    content: counter(l2Counter) '.' counter(l3Counter) ' ';
+    content: counter(l2Counter, upper-alpha) '.' counter(l3Counter) ' ';
     /* 以下為 H2 編號的樣式 */
 }
