@@ -1,0 +1,169 @@
+/* doc 部分 */
+h1.part,
+#doc > h1 {
+	counter-increment: h1Counter;
+	counter-reset: h2Counter;
+}
+
+h1.part:before,
+#doc > h1:before {
+	content: counter(h1Counter, upper-alpha) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* 以下為 H1 編號的樣式 */
+	color: white;
+	background: #000;
+	padding: 6px 12px;
+	margin-right: 12px;
+}
+
+/* 每新增一個 H2 時編號遞增 */
+h2.part,
+#doc > h2 {
+	counter-increment: h2Counter;
+	counter-reset: h3Counter;
+}
+
+h2.part:before,
+#doc > h2:before {
+	content: counter(h1Counter, upper-alpha) '.' counter(h2Counter) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* Counter 後面可以定義顯示的樣式 */
+	margin-right: 8px;
+}
+
+/* 每新增一個 H3 時編號遞增 */
+h3.part,
+#doc > h3 {
+	counter-increment: h3Counter;
+	counter-reset: h4Counter;
+}
+
+h3.part:before,
+#doc > h3:before {
+	content: counter(h1Counter, upper-alpha) '.' counter(h2Counter) '.'
+		counter(h3Counter) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* Counter 後面可以定義顯示的樣式 */
+	margin-right: 8px;
+}
+
+/* 每新增一個 H4 時編號遞增 */
+h4.part,
+#doc > h4 {
+	counter-increment: h4Counter;
+	counter-reset: h5Counter;
+}
+
+h4.part:before,
+#doc > h4:before {
+	content: counter(h1Counter, upper-alpha) '.' counter(h2Counter) '.'
+		counter(h3Counter) '.' counter(h4Counter) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* Counter 後面可以定義顯示的樣式 */
+	margin-right: 8px;
+}
+
+/* 每新增一個 H5 時編號遞增 */
+h5.part,
+#doc > h5 {
+	counter-increment: h5Counter;
+	counter-reset: h6Counter;
+}
+
+h5.part:before,
+#doc > h5:before {
+	content: counter(h1Counter, upper-alpha) '.' counter(h2Counter) '.'
+		counter(h3Counter) '.' counter(h4Counter) '.' counter(h5Counter) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* Counter 後面可以定義顯示的樣式 */
+	margin-right: 8px;
+}
+
+/* 每新增一個 H6 時編號遞增 */
+h6.part,
+#doc > h6 {
+	counter-increment: h6Counter;
+}
+
+h6.part:before,
+#doc > h6:before {
+	content: counter(h1Counter, upper-alpha) '.' counter(h2Counter) '.'
+		counter(h3Counter) '.' counter(h4Counter) '.' counter(h5Counter) '.'
+		counter(h6Counter) !important;
+	visibility: visible !important;
+	height: 100% !important;
+	display: inline-block !important;
+	/* Counter 後面可以定義顯示的樣式 */
+	margin-right: 8px;
+}
+
+/* toc 部分 */
+div.toc > ul > li,
+#doc > p > span > ul > li {
+	counter-increment: l1Counter;
+	counter-reset: l2Counter;
+
+	> a:before {
+		content: counter(l1Counter, upper-alpha) ' ';
+	}
+
+	> ul > li {
+		counter-increment: l2Counter;
+		counter-reset: l3Counter;
+
+		> a:before {
+			content: counter(l1Counter, upper-alpha) '.' counter(l2Counter) ' ';
+		}
+
+		> ul > li {
+			counter-increment: l3Counter;
+			counter-reset: l4Counter;
+
+			> a:before {
+				content: counter(l1Counter, upper-alpha) '.' counter(l2Counter) '.'
+					counter(l3Counter) ' ';
+			}
+
+			> ul > li {
+				counter-increment: l4Counter;
+				counter-reset: l5Counter;
+
+				> a:before {
+					content: counter(l1Counter, upper-alpha) '.' counter(l2Counter) '.'
+						counter(l3Counter) '.' counter(l4Counter) ' ';
+				}
+
+				> ul > li {
+					counter-increment: l5Counter;
+					counter-reset: l6Counter;
+
+					> a:before {
+						content: counter(l1Counter, upper-alpha) '.' counter(l2Counter) '.'
+							counter(l3Counter) '.' counter(l4Counter) '.' counter(l5Counter)
+							' ';
+					}
+
+					> ul > li {
+						counter-increment: l6Counter;
+
+						> a:before {
+							content: counter(l1Counter, upper-alpha) '.' counter(l2Counter)
+								'.' counter(l3Counter) '.' counter(l4Counter) '.'
+								counter(l5Counter) '.' counter(l6Counter) ' ';
+						}
+					}
+				}
+			}
+		}
+	}
+}
